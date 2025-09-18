@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "user")
+@Table(name = "emailnotification")
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmailNotification {
@@ -28,7 +28,7 @@ public class EmailNotification {
 
     private String subject;
 
-    @NotBlank(message = "Eecipient Email is required")
+    @NotBlank(message = "Recipient email is required")
     private String recipientEmail;
 
     @Lob

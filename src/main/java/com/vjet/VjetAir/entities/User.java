@@ -15,6 +15,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -49,13 +51,14 @@ public class User {
 
     private String providerId;
 
-    @ManyToAny(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(
         name = "users_roles",
         joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private List<Role> reles = new ArrayList<>();
+    private List<Role> roles = new ArrayList<>();
+
     private boolean isActive;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) 

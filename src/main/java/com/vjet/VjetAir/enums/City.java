@@ -1,14 +1,22 @@
 package com.vjet.VjetAir.enums;
+import lombok.Getter;
 
+@Getter
 public enum City {
 
+    // Nigeria
     MIAMI(Country.USA),
     DALLAS(Country.USA),
-    LONDON(Country.UK),
-    HANOI(Country.VN),
 
-    private final Country _country;
-    City(Country country){
-        this._country = country;
+    LONDON(Country.UK),
+    HANOI(Country.VN),  // USA
+
+    // UK
+    LEEDS(Country.UK);
+
+    private final Country country;
+
+    City(Country country) {
+        this.country = country;
     }
 }

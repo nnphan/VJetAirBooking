@@ -32,7 +32,7 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, name = "flight_number")
     private String flightNumber;
 
     @Enumerated(EnumType.STRING)
@@ -55,7 +55,7 @@ public class Flight {
     @ManyToOne
     private User assignedPilot;
 
-    @OneToMany(mappedBy = "filght")
+    @OneToMany(mappedBy = "flight")
     private List<Booking> bookings = new ArrayList<>();
 
 }
